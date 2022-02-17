@@ -1,6 +1,5 @@
 ##The function takes in a matrix, converts it to an inverse
 ## It then stores the value of the inverse so it does not have to recompute
-##...when that same matrix is called
 
 
 
@@ -30,7 +29,6 @@ makeCacheMatrix <- function(x = matrix(), ...) {
   list(set = set, get = get, 
        setInverse = setInverse, 
        getInverse = getInverse)
-
 }
 
 

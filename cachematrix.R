@@ -52,8 +52,8 @@ cacheSolve <- function(x, ...) {
     return(var_inv)
   }
     message("creating it now")
-    mat <- x$get()
-    var_inv <- solve(mat, ...)
+    data <- x$get()
+    var_inv <- solve(data, ...)
     x$setInverse(var_inv)
     var_inv
 }

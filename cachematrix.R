@@ -23,7 +23,22 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Write a short comment describing this function
+## ... allows you to pass a function that is not defined in the function arg
+## if use call the function and pass in for example 'na.rm' this would replace
+## all the ... in the function to na.rm
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(x, ...) { 
         ## Return a matrix that is the inverse of 'x'
+  j <- x$getInverse
+  if(!is.null(j)){
+    message("getting cached data")
+    return(j)
+  }
+  else {
+    mat <- x$get
+    j <- solve(mat, ...)
+    x$setInverse(j)
+    j
+  }
 }
+
